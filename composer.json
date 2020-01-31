@@ -1,7 +1,7 @@
 {
     "name": "salines/cakephp4-soft-delete",
     "description": "SoftDelete plugin updated for CakePHP 4",
-    "keywords": ["cakephp", "cakephp 3", "plugin", "soft", "delete", "deletable"],
+    "keywords": ["cakephp", "cakephp 4", "plugin", "soft", "delete", "deletable"],
     "homepage": "https://github.com/salines/cakephp4-soft-delete",
     "type": "cakephp-plugin",
     "license": "MIT",

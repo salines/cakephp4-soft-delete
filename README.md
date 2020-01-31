@@ -25,11 +25,6 @@ composer require salines/cakephp4-soft-delete "~1.0"
 
 ## Configuration
 
-### Load the plugin:
-```
-// In /config/bootstrap.php
-Plugin::load('SoftDelete');
-```
 ### Make a model soft deleteable:
 
 Use the SoftDelete trait on your model Table class:
