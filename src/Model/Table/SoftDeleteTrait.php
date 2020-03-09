@@ -57,7 +57,7 @@ trait SoftDeleteTrait
             return false;
         }
 
-        $primaryKey = (array)$this->primaryKey();
+        $primaryKey = (array)$this->getPrimaryKey();
         if (!$entity->has($primaryKey)) {
             $msg = 'Deleting requires all primary key values.';
             throw new \InvalidArgumentException($msg);
