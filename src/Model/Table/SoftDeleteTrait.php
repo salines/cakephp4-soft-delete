@@ -131,7 +131,7 @@ trait SoftDeleteTrait
         if(!$this->delete($entity)) {
             return false;
         }
-        $primaryKey = (array)$this->primaryKey();
+        $primaryKey = (array)$this->getPrimaryKey();
         $query = $this->query();
         $conditions = (array)$entity->extract($primaryKey);
         $statement = $query->delete()
