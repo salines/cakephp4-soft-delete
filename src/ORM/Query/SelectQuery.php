@@ -1,9 +1,10 @@
 <?php
-namespace SoftDelete\ORM;
+namespace SoftDelete\ORM\Query;
 
-use Cake\ORM\Query as CakeQuery;
+use ArrayObject;
+use Cake\ORM\Query\SelectQuery as CakeSelectQuery;
 
-class Query extends CakeQuery
+class SelectQuery extends CakeSelectQuery
 {
     /**
      * Cake\ORM\Query::triggerBeforeFind overwritten to add the condition `deleted IS NULL` to every find request
@@ -13,7 +14,14 @@ class Query extends CakeQuery
     public function triggerBeforeFind(): void
     {
         if (!$this->_beforeFindFired && $this->_type === 'select') {
-            parent::triggerBeforeFind();
+            $this->_beforeFindFired = true;
+
+            $repository = $this->getRepository();
+            $repository->dispatchEvent('Model.beforeFind', [
+                $this,
+                new ArrayObject($this->_options),
+                !$this->isEagerLoaded(),
+            ]);
 
             $aliasedField = $this
                 ->getRepository()
