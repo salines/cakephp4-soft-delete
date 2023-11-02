@@ -11,7 +11,7 @@
     "require": {
         "php": ">=7.2",
         "cakephp/plugin-installer": "*",
-        "cakephp/cakephp": ">=4.0"
+        "cakephp/cakephp": ">=4.5"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
